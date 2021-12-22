@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/et"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="请输入查询code"
+            android:text="110101" />
+
+        <Button
+            android:id="@+id/query"
+            android:layout_width="wrap_content"
+
+            android:text="根据CityCode查询"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/Citylist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="查看城市" />
+
+    <Button
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="关注城市列表" />
+
+    <Button
+        android:id="@+id/care"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="关注" />
+
+    <TextView
+        android:id="@+id/weather_info"
+        android:layout_width="393dp"
+        android:layout_height="348dp"
+        android:layout_margin="10dp"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="15sp" />
+    <Button
+        android:id="@+id/reload"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="更新数据" />
+
+</LinearLayout>

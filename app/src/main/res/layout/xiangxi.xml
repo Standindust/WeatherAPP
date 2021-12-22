@@ -1,0 +1,109 @@
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="1"
+    >
+    <TableRow>
+
+        <TextView
+            android:layout_width="76dp"
+            android:layout_height="match_parent"
+            android:text="天气"
+            android:textSize="30dp" />
+        <TextView
+            android:id="@+id/weather"
+            android:text=""
+            android:textSize="25dp" />
+
+
+    </TableRow>
+    <TableRow>
+
+        <TextView
+            android:layout_width="76dp"
+            android:layout_height="match_parent"
+            android:text="地区"
+            android:textSize="30dp" />
+        <TextView
+            android:id="@+id/place"
+            android:text=""
+            android:textSize="25dp" />
+
+
+    </TableRow>
+    <TableRow>
+
+        <TextView
+            android:layout_width="76dp"
+            android:layout_height="match_parent"
+            android:text="温度"
+            android:textSize="30dp" />
+        <TextView
+            android:id="@+id/temp"
+            android:text=""
+            android:textSize="25dp" />
+
+
+    </TableRow>
+    <TableRow>
+
+        <TextView
+            android:layout_width="76dp"
+            android:layout_height="match_parent"
+            android:text="湿度"
+            android:textSize="30dp" />
+        <TextView
+            android:id="@+id/wet"
+            android:text=""
+            android:textSize="25dp" />
+
+
+    </TableRow>
+    <TableRow>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="风向"
+            android:textSize="30dp" />
+        <TextView
+            android:id="@+id/winddirection"
+            android:text=""
+            android:textSize="25dp" />
+
+
+    </TableRow>
+    <TableRow>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="风力"
+            android:textSize="30dp" />
+        <TextView
+            android:id="@+id/windpower"
+            android:text=""
+            android:textSize="25dp" />
+
+
+    </TableRow>
+    <TableRow>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="更新时间"
+            android:textSize="20dp" />
+        <TextView
+            android:id="@+id/time"
+            android:text=""
+            android:textSize="20dp" />
+
+
+    </TableRow>
+
+
+
+
+</TableLayout>
