@@ -186,17 +186,47 @@ public class MainActivity extends Activity implements OnScrollListener,
         Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("删除该地区吗？");
         builder.setMessage("确认删除吗？");
+        Map<String,String> itemMap = (Map<String, String>) listview.getItemAtPosition(arg2);
+        String id = itemMap.get("tv_code");
         builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
-                Map<String,String> itemMap = (Map<String, String>) listview.getItemAtPosition(n);
-                String id = itemMap.get("tv_id");
+                    String string = CacheUtil.get(getApplicationContext()).getString(id, "");
+                    WeatherInfo.LivesBean curLive;
+                    WeatherInfo weatherInfo = JSON.parseObject(string, WeatherInfo.class);
+                    WeatherInfo.LivesBean livesBean = weatherInfo.getLives().get(0);
+                    curLive=livesBean;
+                    if(curLive==null){
+                        Toast.makeText(getApplication(),"请先查找到对应的天气信息",Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
+                    String care = CacheUtil.get(getApplication()).getString("care", "");
+                    List<CityData> citeyDataList = JSON.parseArray(care,CityData.class);
+                    if(citeyDataList==null){
+                        citeyDataList=new ArrayList<>();
+                    }
+                    int pos=-1;
+                    for (int i = 0; i < citeyDataList.size(); i++) {
+                        if (citeyDataList.get(i).getCode().equals(curLive.getAdcode())) {
+                            pos = i;
+                            break;
+                        }
+                    }
+
+
+                    citeyDataList.remove(pos);
+                    CacheUtil.get(getApplication()).put("care",JSON.toJSONString(citeyDataList));
+                    RefreshNotesList();
+
+
+                }
+            });
 
 
 
-            }
-        });
+
         builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
